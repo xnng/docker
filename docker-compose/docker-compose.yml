@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  mysql:
+    image: mysql
+    ports:
+      - "3307:3306"
+    volumes:
+      - "./mysql:/var/lib/mysql"
+    container_name: sql
+    environment:
+      MYSQL_DATABASE: jpress
+      MYSQL_ROOT_PASSWORD: root
+
+  tomcat:
+    build: .
+    ports:
+      - "8080:8080"
+    container_name: web
+
