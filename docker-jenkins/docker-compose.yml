@@ -1,0 +1,13 @@
+version: "3"
+services:
+ jenkins:
+  build: .
+  image: my_jenkins
+  ports:
+    - "8090:8080"
+    - "50000:50000"
+  container_name: my_jenkins
+  volumes:
+    - "./jenkins_home:/var/jenkins_home"
+    - "/var/run/docker.sock:/var/run/docker.sock"
+    - "/usr/bin/docker:/usr/bin/docker"
