@@ -14,4 +14,4 @@
 
 - [Docker 入门（三）：持续集成、持续部署](https://stormxing.com/posts/docker3/)
 
-- - [使用到的相关文件](https://github.com/stormxing/docker-notes/tree/master/docker-jenkins)
+- [使用到的相关文件](https://github.com/stormxing/docker-notes/tree/master/docker-jenkins)
