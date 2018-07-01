@@ -6,7 +6,10 @@
 
 ```
 $ git clone https://github.com/ifkingx/Docker-Learn.git
+
 $ cd Docker-Learn/libs/dockerfile-compose
+
 $ wget https://xings.oss-cn-shanghai.aliyuncs.com/share/jpress.war
+
 $ docker-compose up -d
 ```

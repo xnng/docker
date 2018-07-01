@@ -6,6 +6,8 @@
 
 ```
 $ git clone https://github.com/ifkingx/Docker-Learn.git
+
 $ cd Docker-Learn/tools/jenkins
+
 $ docker-compose up -d
 ```
