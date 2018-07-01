@@ -10,4 +10,4 @@
 
 - [Docker 容器中使用 Jenkins](./tools/jenkins/)
 
-## [常见问题](./Questions.md)
+## [FAQ](./Questions.md)
