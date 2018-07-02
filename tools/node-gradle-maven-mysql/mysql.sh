@@ -7,10 +7,12 @@ createDatabase(){
         -e MYSQL_ROOT_PASSWORD=$3 \
         mysql:$4
 }
+readValue(){
+        read -p "Please input the port you want: " port
+        read -p "Please input the databaseName you want: " databaseName
+        read -p "Please input the password you want: " password
+        read -p "Please input the version you want: " version
+}
 
-read -p "Please input the port you want: " port
-read -p "Please input the databaseName you want: " databaseName
-read -p "Please input the password you want: " password
-read -p "Please input the version you want: " version
-
+readValue
 createDatabase $port $databaseName $password $version
