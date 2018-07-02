@@ -1,0 +1,11 @@
+FROM gradle:4.7.0-jdk8
+
+WORKDIR /app
+
+COPY . /app
+
+RUN gradle build
+
+EXPOSE 8080
+
+ENTRYPOINT ["java", "-jar", "/app/build/libs/app.jar"]

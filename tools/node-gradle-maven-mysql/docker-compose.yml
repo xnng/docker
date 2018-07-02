@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  front:
+    build: ./front
+    image: app-front
+    ports:
+      - "8001:8001"
+  back:
+    build: ./back
+    image: app-back
+    ports:
+      - "8080:8080"

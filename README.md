@@ -12,4 +12,6 @@
 
 - [Docker 中用 nginx 配置多域名多端口](./tools/jenkins/)
 
+- [Node.js + Maven/Gradle + Mysql 构建环境参考示例](./tools/node-gradle-maven-mysql/)
+
 ## [FAQ](./questions.md)
