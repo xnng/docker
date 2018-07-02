@@ -1,8 +1,16 @@
 #!/bin/bash
 
-MYSQL_DATABASE="xxx"
-MYSQL_ROOT_PASSWORD="xxx"
-MYSQL_VERSION="xxx"
+createDatabase(){
+        docker run -d -p $1:3306 --name my_mysql \
+        -v $PWD/mysql_data:/var/lib/mysql \
+        -e MYSQL_DATABASE=$2 \
+        -e MYSQL_ROOT_PASSWORD=$3 \
+        mysql:$4
+}
 
-docker run -d -p 3307:3306 --name mysql - v /root/mysql_data:/var/lib/mysql \
--e MYSQL_DATABASE=${MYSQL_DATABASE} -e MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD} mysql:${MYSQL_VERSION}
+read -p "Please input the port you want: " port
+read -p "Please input the databaseName you want: " databaseName
+read -p "Please input the password you want: " password
+read -p "Please input the version you want: " version
+
+createDatabase $port $databaseName $password $version
