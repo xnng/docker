@@ -22,3 +22,16 @@ $ sh haproxy.sh
 ```
 
 - 访问 `ip:4001/dbs`,可看到监控页面，用户名和密码是 `root`，`ip:4002` 为数据库连接地址
+
+## 其他
+
+- mysqlslap 并发测试
+
+```sh
+mysqlslap -hlocalhost -uroot -proot -P3306 \
+--concurrency=500 --iterations=1 --auto-generate-sql \
+--auto-generate-sql-load-type=mixed \
+--auto-generate-sql-add-autoincrement \
+--engine=innodb \
+--number-of-queries=500
+```

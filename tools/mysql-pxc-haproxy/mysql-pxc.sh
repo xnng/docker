@@ -30,7 +30,7 @@ createMaster(){
 }
 
 createSlave(){
-	sleep 10
+	sleep 120
 	docker run -d -p $(($1 + 1)):3306 \
 	-v pxc2:/var/lib/mysql \
 	-e MYSQL_ROOT_PASSWORD=$2 \
@@ -42,7 +42,7 @@ createSlave(){
 	--net=pxc \
 	--ip=172.25.0.3 pxc
 
-	sleep 3
+	sleep 10
 	docker run -d -p $(($1 + 2)):3306 \
 	-v pxc3:/var/lib/mysql \
 	-e MYSQL_ROOT_PASSWORD=$2 \
@@ -54,7 +54,7 @@ createSlave(){
 	--net=pxc \
 	--ip=172.25.0.4 pxc
 
-	sleep 3
+	sleep 10
 	docker run -d -p $(($1 + 3)):3306 \
 	-v pxc4:/var/lib/mysql \
 	-e MYSQL_ROOT_PASSWORD=$2 \
@@ -66,7 +66,7 @@ createSlave(){
 	--net=pxc \
 	--ip=172.25.0.5 pxc
 
-	sleep 3
+	sleep 10
 	docker run -d -p $(($1 + 4)):3306 \
 	-v pxc5:/var/lib/mysql \
 	-e MYSQL_ROOT_PASSWORD=$2 \
