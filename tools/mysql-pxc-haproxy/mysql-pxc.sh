@@ -6,8 +6,7 @@ createImage(){
 }
 
 createNetwork(){
-	docker network create pxc
-	docker network inspect pxc
+	docker network create --subnet=172.25.0.0/24 pxc
 }
 
 createVolume(){
@@ -27,7 +26,7 @@ createMaster(){
 	--privileged \
 	--name=pxc1 \
 	--net=pxc \
-	--ip=172.$3.0.2 pxc
+	--ip=172.25.0.2 pxc
 }
 
 createSlave(){
@@ -41,7 +40,7 @@ createSlave(){
 	--privileged \
 	--name=pxc2 \
 	--net=pxc \
-	--ip=172.$3.0.3 pxc
+	--ip=172.25.0.3 pxc
 
 	sleep 3
 	docker run -d -p $(($1 + 2)):3306 \
@@ -53,7 +52,7 @@ createSlave(){
 	--privileged \
 	--name=pxc3 \
 	--net=pxc \
-	--ip=172.$3.0.4 pxc
+	--ip=172.25.0.4 pxc
 
 	sleep 3
 	docker run -d -p $(($1 + 3)):3306 \
@@ -65,7 +64,7 @@ createSlave(){
 	--privileged \
 	--name=pxc4 \
 	--net=pxc \
-	--ip=172.$3.0.5 pxc
+	--ip=172.25.0.5 pxc
 
 	sleep 3
 	docker run -d -p $(($1 + 4)):3306 \
@@ -77,13 +76,12 @@ createSlave(){
 	--privileged \
 	--name=pxc5 \
 	--net=pxc \
-	--ip=172.$3.0.6 pxc
+	--ip=172.25.0.6 pxc
 }
 
 inputValue(){
     read -p "Please input the beginning port you want: " port
     read -p "Please input the mysql_root_password you want: " password
-    read -p "Please input the pxc network core ip, it is two-address block: " ip
 }
 
 createImage
@@ -94,7 +92,6 @@ createVolume
 
 inputValue
 
-createMaster $port $password $ip
-
-createSlave $port $password $ip
+createMaster $port $password
+createSlave $port $password
 
