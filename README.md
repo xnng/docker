@@ -14,4 +14,8 @@
 
 - [Node.js + Maven/Gradle + Mysql 构建环境参考示例](./tools/node-gradle-maven-mysql/)
 
-## [FAQ](./questions.md)
+- [五节点 MySQL PXC 集群 + 单节点 haproxy 集群](./tools/mysql-pxc-haproxy)
+
+## FAQ
+
+- [遇到过的问题](./questions.md)

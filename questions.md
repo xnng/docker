@@ -1,6 +1,6 @@
 ## Dockerfile 问题
 
-**写了一个安装 node.js 的 Dockerfile，遇到了两个问题：**
+**写了一个在 ubuntu 中安装 node.js 的 Dockerfile，遇到了两个问题：**
 
 - 安装 nvm 的时候会自动安装一个 node.js
 - `--registry=https 提示不支持`
@@ -9,7 +9,7 @@
 
 ```
 FROM ubuntu:18.04
-MAINTAINER stormxing <stormxing@foxmail.com>
+MAINTAINER ifking <me@ifking.com>
 
 ENV NODE_VERSION v8.11.1
 ENV WORK_DIR /worksapce
@@ -31,7 +31,7 @@ WORKDIR $WORK_DIR
 
 - 安装 nvm 的时候会自动安装一个 node.js 是因为此版本的 nvm 中 `NODE_VERSION` 是环境变量。
 
-- `--registry=https 提示不支持`，把最后一条命令放到上面一起就好了，原因未知。
+- `--registry=https 提示不支持`，把最后一条命令放到上面一起就好了，Dockerfile 的指令是分层的，可能是环境变量的问题。
 
 ```
 FROM ubuntu:18.04
@@ -87,7 +87,7 @@ https://github.com/docker/machine/issues ，这个问题在官方仓库里被提
 
 - 解决方案：
 
-官方文档的 nginx 配置文件目录写错了，应该是 `/etc/nginx/conf.d`
+那个不是目录，`/etc/nginx/nginx.conf` 是主配置文件，默认的副配置文件目录是 `/etc/nginx/conf.d`
 
 ## jenkins 启动报错
 
@@ -105,3 +105,13 @@ touch: cannot touch ‘/var/jenkins_home/copy_reference_file.log’: Permission 
 $ sudo chown -R 1000:1000 /home/jenkins_home
 $ docker run -d --name jenkins -p 8090:8080 -p 50000:50000 -v /home/jenkins_home:/var/jenkins_home jenkins
 ```
+
+更方便的解决方案是重写 Jenkins 镜像，直接改成 root 账户
+
+## shell 脚本问题
+
+- 在 VSCode 中写的 shell 脚本中用了函数式的写法，拿到 linux 环境中执行报错，而用 vim 写的就没有问题。
+
+- 解决方案：
+
+一开始是怀疑是否是 Windows 下文件编码的问题，后来咋 Linux 中的 VSCode 中测试也是一样的，用其它编辑器也是一样的，所以应该是只能用 vim 写的脚本才没有问题。以后执行脚本之前，先将内容复制下来然后复制到 vim 中，再保存执行。
