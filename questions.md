@@ -115,3 +115,23 @@ $ docker run -d --name jenkins -p 8090:8080 -p 50000:50000 -v /home/jenkins_home
 - 解决方案：
 
 一开始是怀疑是否是 Windows 下文件编码的问题，后来咋 Linux 中的 VSCode 中测试也是一样的，用其它编辑器也是一样的，所以应该是只能用 vim 写的脚本才没有问题。以后执行脚本之前，先将内容复制下来然后复制到 vim 中，再保存执行。
+
+## Network 问题
+
+- 创建容器时在已知自建网络的地址段并加入到了网络中的情况加用 `--ip=xx` 指定容器 ip 会报错
+
+- 解决方案：
+
+创建网络的时候指定地址段，例如：
+
+```sh
+$ docker network create --subnet=172.25.0.0/24 pxc
+```
+
+## MySQL 问题
+
+- mysql 创建用户报错 ERROR 1396
+
+- 解决方案：
+
+用 `flush privileges;` 刷新下权限，[参考](https://blog.csdn.net/u011575570/article/details/51438841)
