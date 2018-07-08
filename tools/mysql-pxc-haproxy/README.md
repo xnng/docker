@@ -18,5 +18,7 @@ $ mysql -uroot -ppassword -e "create user 'haproxy'@'%' IDENTIFIED BY '';"
 - 然后运行 Haproxy 容器
 
 ```sh
-
+$ sh haproxy.sh
 ```
+
+- 访问 `ip:4001/dbs`,可看到监控页面，用户名和密码是 `root`，`ip:4002` 为数据库连接地址
