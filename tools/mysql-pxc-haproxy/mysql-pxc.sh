@@ -7,6 +7,7 @@ createImage(){
 
 createNetwork(){
 	docker network create pxc
+	docker network inspect pxc
 }
 
 createVolume(){
@@ -25,7 +26,8 @@ createMaster(){
 	-e XTRABACKUP_PASSWORD=root \
 	--privileged \
 	--name=pxc1 \
-	--net=pxc pxc
+	--net=pxc \
+	--ip=172.$3.0.2 pxc
 }
 
 createSlave(){
@@ -38,7 +40,8 @@ createSlave(){
 	-e CLUSTER_JOIN=pxc1 \
 	--privileged \
 	--name=pxc2 \
-	--net=pxc pxc
+	--net=pxc \
+	--ip=172.$3.0.3 pxc
 
 	sleep 3
 	docker run -d -p $(($1 + 2)):3306 \
@@ -49,7 +52,8 @@ createSlave(){
 	-e CLUSTER_JOIN=pxc1 \
 	--privileged \
 	--name=pxc3 \
-	--net=pxc pxc
+	--net=pxc \
+	--ip=172.$3.0.4 pxc
 
 	sleep 3
 	docker run -d -p $(($1 + 3)):3306 \
@@ -60,7 +64,8 @@ createSlave(){
 	-e CLUSTER_JOIN=pxc1 \
 	--privileged \
 	--name=pxc4 \
-	--net=pxc pxc
+	--net=pxc \
+	--ip=172.$3.0.5 pxc
 
 	sleep 3
 	docker run -d -p $(($1 + 4)):3306 \
@@ -71,12 +76,14 @@ createSlave(){
 	-e CLUSTER_JOIN=pxc1 \
 	--privileged \
 	--name=pxc5 \
-	--net=pxc pxc
+	--net=pxc \
+	--ip=172.$3.0.6 pxc
 }
 
 inputValue(){
-        read -p "Please input the beginning port you want: " port
-        read -p "Please input the mysql_root_password you want: " password
+    read -p "Please input the beginning port you want: " port
+    read -p "Please input the mysql_root_password you want: " password
+    read -p "Please input the pxc network core ip, it is two-address block: " ip
 }
 
 createImage
@@ -87,6 +94,7 @@ createVolume
 
 inputValue
 
-createMaster $port $password
+createMaster $port $password $ip
 
-createSlave $port $password
+createSlave $port $password $ip
+
