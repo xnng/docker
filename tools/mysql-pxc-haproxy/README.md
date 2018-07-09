@@ -1,4 +1,6 @@
-![](../../libs/images/pxc.png)
+## 架构图
+
+<div align="center"><img src="../../libs/images/pxc.png" /></div>
 
 ## 创建五节点的 MySQL PXC 集群
 
