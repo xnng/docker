@@ -1,1 +1,1 @@
-![](../../libs/images/pxc-keepalived.png)
+<div align="center">![](../../libs/images/pxc-keepalived.png)</div>
