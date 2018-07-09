@@ -89,3 +89,11 @@ $ service keepalived start
 - 使用 `192.168.99.150:3306` 看能否登录数据库
 
 - 停掉一个 haproxy 后看上面操作是否还能成功，若都没有问题，则代表搭建成功。
+
+### keepalived 问题
+
+- Ubuntu 18.04 虚拟机中启动 keepalived，ip 不生效
+
+- 解决方案：
+
+虚拟机的问题，没有成功分配 ip 地址，执行 `dhclient` 可解决
