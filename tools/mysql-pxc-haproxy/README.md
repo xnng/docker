@@ -1,3 +1,5 @@
+![](../../libs/images/pxc.png)
+
 ## 创建五节点的 MySQL PXC 集群
 
 ```sh
