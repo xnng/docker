@@ -14,12 +14,21 @@ $ mysql-pxc.sh
 
 ### 二、创建两个 Haproxy 节点
 
+- 两个 haproxy 节点除了映射到主机的 ip、分配的 docker 网络的 ip、容器名字不一样以外，其他都一样。
+
 ```sh
 $ sh haproxy1.sh
 $ sh haproxy2.sh
 ```
 
-两个 haproxy 节点除了映射到主机的 ip、分配的 docker 网络的 ip、容器名字不一样以外，其他都一样。
+- 在之前的数据库中创建一个无密码的账户，用来做心跳检测
+
+```sh
+$ docker exec -it pxc1 bash
+$ mysql -uroot -ppassword -e "create user 'haproxy'@'%' IDENTIFIED BY '';"
+```
+
+- 访问 `ip:4001/dbs` 查看是否创建成功。
 
 ### 三、在 Haproxy 节点中和宿主机中安装 Keepalived
 
