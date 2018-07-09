@@ -2,7 +2,7 @@
 
 createHaproxy(){
     docker run -d \
-    -p 4002:8888 -p 4003:3306 \
+    -p 4003:8888 -p 4004:3306 \
     -v $PWD/keepalived/h2:/usr/local/etc/haproxy \
     --name haproxy2 \
     --privileged \

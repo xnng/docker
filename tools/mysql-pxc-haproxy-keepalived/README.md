@@ -64,7 +64,7 @@ $ echo deb http://mirrors.aliyun.com/debian wheezy main contrib non-free \
     deb-src http://mirrors.aliyun.com/debian-security wheezy/updates main contrib non-free \
     > /etc/apt/sources.list
 $ apt-get update
-$ sudo apt install keepalived -y
+$ apt install keepalived -y
 $ service keepalived start
 ```
 
@@ -78,7 +78,7 @@ $ echo deb http://mirrors.aliyun.com/debian wheezy main contrib non-free \
     deb-src http://mirrors.aliyun.com/debian-security wheezy/updates main contrib non-free \
     > /etc/apt/sources.list
 $ apt-get update
-$ sudo apt install keepalived -y
+$ apt install keepalived -y
 $ service keepalived start
 ```
 
