@@ -6,10 +6,12 @@ createHaproxy(){
     -v $PWD/haproxy-data:/usr/local/etc/haproxy \
     --name haproxy1 \
     --privileged \
-    --net=pxc haproxy
+    --net=pxc \
+    --ip=172.25.0.21 haproxy
     
     docker exec -it haproxy1 bash -c \
     "haproxy -f /usr/local/etc/haproxy/haproxy.cfg"
 }
 
 createHaproxy
+

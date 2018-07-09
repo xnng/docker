@@ -42,7 +42,7 @@ createSlave(){
 	--net=pxc \
 	--ip=172.25.0.3 pxc
 
-	sleep 10
+	sleep 30
 	docker run -d -p $(($1 + 2)):3306 \
 	-v pxc3:/var/lib/mysql \
 	-e MYSQL_ROOT_PASSWORD=$2 \
@@ -54,29 +54,6 @@ createSlave(){
 	--net=pxc \
 	--ip=172.25.0.4 pxc
 
-	sleep 10
-	docker run -d -p $(($1 + 3)):3306 \
-	-v pxc4:/var/lib/mysql \
-	-e MYSQL_ROOT_PASSWORD=$2 \
-	-e CLUSTER_NAME=pxc \
-	-e XTRABACKUP_PASSWORD=root \
-	-e CLUSTER_JOIN=pxc1 \
-	--privileged \
-	--name=pxc4 \
-	--net=pxc \
-	--ip=172.25.0.5 pxc
-
-	sleep 10
-	docker run -d -p $(($1 + 4)):3306 \
-	-v pxc5:/var/lib/mysql \
-	-e MYSQL_ROOT_PASSWORD=$2 \
-	-e CLUSTER_NAME=pxc \
-	-e XTRABACKUP_PASSWORD=root \
-	-e CLUSTER_JOIN=pxc1 \
-	--privileged \
-	--name=pxc5 \
-	--net=pxc \
-	--ip=172.25.0.6 pxc
 }
 
 inputValue(){
