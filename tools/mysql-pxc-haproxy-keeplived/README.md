@@ -1,0 +1,1 @@
+![](../../libs/images/pxc-keepalived.png)
