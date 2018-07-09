@@ -16,7 +16,7 @@
 
 - [五节点 MySQL PXC 集群 + 单节点 haproxy 实现高性能、高负载](./tools/mysql-pxc-haproxy)
 
-- [五节点 MySQL PXC 集群 + 双节点 haproxy 集群 + Keepalived 实现高性能、高负载、高可用](./tools/mysql-pxc-haproxy-keeplived)
+- [五节点 MySQL PXC 集群 + 双节点 haproxy 集群 + Keepalived 实现高性能、高负载、高可用](./tools/mysql-pxc-haproxy-keepalived)
 
 ## FAQ
 
