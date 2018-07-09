@@ -135,3 +135,11 @@ $ docker network create --subnet=172.25.0.0/24 pxc
 - 解决方案：
 
 用 `flush privileges;` 刷新下权限，[参考](https://blog.csdn.net/u011575570/article/details/51438841)
+
+## PXC 集群问题
+
+- 停掉 Master 节点后无法启动
+
+- 解决方案：
+
+pxc 集群的节点启动和停止的顺序较为严格，需要先停掉 slave 节点，再停掉 master 节点才行。启动的时候要先启动 master 节点，然后再启动 slave 节点。如果 master 节点意外停掉，则下一个 slave 节点会成为新的 master 节点。
