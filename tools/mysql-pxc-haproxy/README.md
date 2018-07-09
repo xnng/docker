@@ -2,7 +2,9 @@
 
 <div align="center"><img src="../../libs/images/pxc.png" /></div>
 
-## 创建五节点的 MySQL PXC 集群
+## 如何使用
+
+### 一、创建五节点的 MySQL PXC 集群
 
 ```sh
 $ mysql-pxc.sh
@@ -10,7 +12,7 @@ $ mysql-pxc.sh
 
 接收两个参数，第一个 MySQL 实例的起始端口号和数据库的密码
 
-## 创建 Haproxy 负载均衡器
+### 二、创建 Haproxy 负载均衡器
 
 - 首先要在之前的数据库中创建一个无密码的账户，用来做心跳检测
 
@@ -29,7 +31,7 @@ $ sh haproxy.sh
 
 ## 其他
 
-- mysqlslap 并发测试
+mysqlslap 并发测试命令：
 
 ```sh
 mysqlslap -hlocalhost -uroot -proot -P3306 \
