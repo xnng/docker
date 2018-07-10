@@ -55,6 +55,7 @@ $ docker exec -it haproxy1 bash -c "mkdir /etc/keepalived"
 $ docker exec -it haproxy2 bash -c "mkdir /etc/keepalived"
 $ docker cp $PWD/keepalived/h1/keepalived.conf haproxy1:/etc/keepalived
 $ docker cp $PWD/keepalived/h2/keepalived.conf haproxy2:/etc/keepalived
+```
 
 然后先换阿里源，安装并启动 Keepalived
 
