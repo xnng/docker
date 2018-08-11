@@ -1,3 +1,5 @@
+此操作只能在本地服务器使用，因为云服务器不支持虚拟 ip 技术。
+
 ## 架构图
 
 <div align="center"><img src="../../libs/images/pxc-keepalived.png" /></div>
