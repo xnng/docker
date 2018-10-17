@@ -1,10 +1,10 @@
 ## 入门
 
-- [Docker 的基本概念和基本操作](https://www.bgrc.fun/posts/docker/index.html)
+- [Docker 的基本概念和基本操作](https://xnng.github.io/posts/docker/index.html)
 
-- [Dockerfile 和 docker-compose 的简单应用](https://www.bgrc.fun/posts/docker2/index.html) [(用到的文件)](./libs/dockerfile-compose/)
+- [Dockerfile 和 docker-compose 的简单应用](https://xnng.github.io/posts/docker2/index.html) [(用到的文件)](./libs/dockerfile-compose/)
 
-- [在日常开发过程中用 Docker 进行 CI/CD](https://www.bgrc.fun/posts/docker3/index.html)
+- [在日常开发过程中用 Docker 进行 CI/CD](https://xnng.github.io/posts/docker3/index.html)
 
 ## 实战
 
