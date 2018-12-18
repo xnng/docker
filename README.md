@@ -85,7 +85,7 @@ services:
 version: "3.1"
 
 services:
-  postgres:
+  db:
     image: postgres
     restart: always
     container_name: postgresql
