@@ -1,10 +1,10 @@
 ## 笔记
 
-- [Docker 的基本概念和基本操作](https://xnngs.cn/old/docker1.html)
+- [Docker 的基本概念和基本操作](https://xnngs.cn/posts/docker.html)
 
-- [Dockerfile 和 docker-compose 的简单应用](https://xnngs.cn/old/docker2.html) [(用到的文件)](./libs/dockerfile-compose/)
+- [Dockerfile 和 docker-compose 的简单应用](https://xnngs.cn/posts/docker2.html) [(用到的文件)](./libs/dockerfile-compose/)
 
-- [在日常开发过程中用 Docker 进行 CI/CD](https://xnngs.cn/old/docker3.html)
+- [在日常开发过程中用 Docker 进行 CI/CD](https://xnngs.cn/posts/docker3.html)
 
 ## 示例
 
@@ -22,7 +22,7 @@
 
 - [遇到过的问题](./questions.md)
 
-## 常用 docker-compose
+## 常用数据库的 docker-compose
 
 - mongodb
 
