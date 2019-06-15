@@ -1,0 +1,16 @@
+version: "3.1"
+
+services:
+  jenkins:
+    user: root
+    image: jenkins/jenkins:lts
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    environment:
+      TZ: Asia/Shanghai
+    volumes:
+      - "/home/jenkins_home:/var/jenkins_home"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/usr/bin/docker:/usr/bin/docker"
+      - "/usr/local/bin/docker-compose:/usr/local/bin/docker-compose"
