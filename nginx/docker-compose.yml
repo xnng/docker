@@ -7,4 +7,5 @@ services:
       - "80:80"
     container_name: nginx
     volumes:
-      - "$PWD/conf:/etc/nginx/conf.d"
+      - "$PWD/html:/usr/share/nginx/html"
+      - "$PWD/config:/etc/nginx/conf.d"
