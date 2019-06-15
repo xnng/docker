@@ -1,0 +1,10 @@
+version: "3.1"
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    container_name: nginx
+    volumes:
+      - "$PWD/conf:/etc/nginx/conf.d"
