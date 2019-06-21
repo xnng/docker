@@ -1,0 +1,12 @@
+{
+  "license": "MIT",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon src/server.js",
+    "prod": "docker-compose up -d --build"
+  },
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
+  }
+}
