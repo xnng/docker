@@ -1,16 +1,17 @@
-version: "3.1"
-
+version: "3"
 services:
-  jenkins:
-    user: root
-    image: jenkins/jenkins:lts
-    ports:
-      - "8080:8080"
-      - "50000:50000"
-    environment:
-      TZ: Asia/Shanghai
-    volumes:
-      - "/home/jenkins_home:/var/jenkins_home"
-      - "/var/run/docker.sock:/var/run/docker.sock"
-      - "/usr/bin/docker:/usr/bin/docker"
-      - "/usr/local/bin/docker-compose:/usr/local/bin/docker-compose"
+ jenkins:
+  user: root
+  image: jenkins/jenkins:lts
+  ports:
+    - "8080:8080"
+    - "50000:50000"
+  environment:
+    TZ: "Asia/Shanghai"
+  container_name: jenkins
+  volumes:
+    - "/home/jenkins_home:/var/jenkins_home"
+    - "/home/jenkins_home/.ssh:/root/.ssh"
+    - "/var/run/docker.sock:/var/run/docker.sock"
+    - "/usr/bin/docker:/usr/bin/docker"
+    - "/usr/local/bin/docker-compose:/usr/local/bin/docker-compose"
