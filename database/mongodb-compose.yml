@@ -19,6 +19,7 @@ services:
     restart: always
     ports:
       - 4000:8081
+    container_name: mongo-web
     environment:
     ME_CONFIG_BASICAUTH_USERNAME: admin
     ME_CONFIG_BASICAUTH_PASSWORD: admin
