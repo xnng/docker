@@ -1,10 +1,13 @@
 {
   "apps": [
     {
-      "name": "server",
-      "script": "./src/server.js",
-      "instances": 2,
+      "name": "dev",
+      "script": "./server.js",
+      "instances": 1,
       "exec_mode": "cluster",
+      "out_file": "./logs/pm2_out.log",
+      "error_file": "./logs/pm2_error.log",
+      "watch": false,
       "env": {
         "NODE_ENV": "production"
       }
