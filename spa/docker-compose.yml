@@ -1,0 +1,9 @@
+version: '3.1'
+
+services:
+  vue-admin-fe:
+    build: ../
+    image: vue-admin
+    ports:
+      - '9001:80'
+    container_name: vue-admin

@@ -1,13 +1,15 @@
-version: "3.1"
+version: '3.1'
 
 services:
   nginx:
-    image: nginx:latest
+    image: nginx:alpine
+    environment:
+      TZ: 'Asia/Shanghai'
     ports:
-      - "80:80"
-      - "443:443"
+      - '80:80'
+      - '443:443'
     container_name: nginx
     volumes:
-      - "$PWD/certificate:/home/certificate"
-      - "$PWD/html:/usr/share/nginx/html"
-      - "$PWD/config:/etc/nginx/conf.d"
+      - '$PWD/certificate:/home/certificate'
+      - '$PWD/html:/usr/share/nginx/html'
+      - '$PWD/config:/etc/nginx/conf.d'
